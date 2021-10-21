@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { USERS_ACTIONS } from "./store/actions/users.actions";
-import {
-  selectUserIds,
-  selectAllUsers,
-  selectUsersEntities,
-  selectTotalUsers
-} from "./store/selectors/users.selector";
+
 import {
   routerSelector,
   selectCurrentRoute,
   selectQueryParam,
   selectQueryParams, selectRouteData, selectRouteParam, selectRouteParams, selectUrl
-} from "./store/selectors/router.selector";
+} from "../../../../../projects/LH/lease-hawk/src/app/core/store/selectors/router.selector";
+import { selectAllUsers, selectTotalUsers, selectUserIds, selectUsersEntities } from "./store/selectors/users.selector";
 
 @Injectable()
 export class AppPresenter {

@@ -1,9 +1,9 @@
-import { IUserState, selectUserEntities, selectUserTotal, USER_STATE_KEY } from "../reducers/user.reducer";
 import { createFeatureSelector, createSelector, select } from "@ngrx/store";
-import * as fromUser from '../reducers/user.reducer';
+import { IUserState, USER_STATE_KEY } from "../reducers/user.reducer";
 import { pipe } from "rxjs";
-import { map } from "rxjs/operators";
 import { IUser } from "../../shared/models/user.model";
+import { map } from "rxjs/operators";
+import * as fromUser from '../reducers/user.reducer';
 
 export const selectUserState = createFeatureSelector<IUserState>(USER_STATE_KEY);
 

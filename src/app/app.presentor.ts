@@ -8,10 +8,17 @@ import {
   selectQueryParam,
   selectQueryParams, selectRouteData, selectRouteParam, selectRouteParams, selectUrl
 } from "../../../../../projects/LH/lease-hawk/src/app/core/store/selectors/router.selector";
-import { selectAllUsers, selectTotalUsers, selectUserIds, selectUsersEntities } from "./store/selectors/users.selector";
+import {
+  selectAllUsers,
+  selectLastUsers,
+  selectTotalUsers,
+  selectUserIds,
+  selectUsersEntities
+} from "./store/selectors/users.selector";
 
 @Injectable()
 export class AppPresenter {
+  any$ = this.store.pipe(selectLastUsers(5));
   usersIds$: any = this.store.select(selectUserIds(2));
   allUsers$: any = this.store.select(selectAllUsers);
   allUsersEntities$: any = this.store.select(selectUsersEntities);
